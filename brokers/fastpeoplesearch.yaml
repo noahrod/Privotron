@@ -1,6 +1,6 @@
 name: FastPeopleSearch
 slug: fastpeoplesearch
-url: https://www.fastpeoplesearch.com/removal
+url: https://www.fastpeoplesearch.com/optout
 required_fields:
   - first_name
   - last_name
@@ -8,7 +8,7 @@ required_fields:
   - city
 steps:
   - action: navigate
-    url: "https://www.fastpeoplesearch.com/removal"
+    url: "https://www.fastpeoplesearch.com/optout"
   - action: fill
     selector: '[name="firstname"]'
     field: first_name
