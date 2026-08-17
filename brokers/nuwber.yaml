@@ -1,0 +1,33 @@
+name: Nuwber
+slug: nuwber
+url: https://nuwber.com/removal/link
+required_fields:
+  - first_name
+  - last_name
+  - email
+  - state
+  - city
+steps:
+  - action: navigate
+    url: "https://nuwber.com/removal/link"
+  - action: fill
+    selector: '[name="first_name"]'
+    field: first_name
+  - action: fill
+    selector: '[name="last_name"]'
+    field: last_name
+  - action: fill
+    selector: '[name="email"]'
+    field: email
+  - action: fill
+    selector: '[name="city"]'
+    field: city
+  - action: select_state
+    selector: '[name="state"]'
+    format: abbr
+  - action: click
+    selector: '[type="submit"]'
+  - action: wait
+    seconds: 3
+  - action: prompt_user_to_select_record
+    description: "Select your record to remove from Nuwber"

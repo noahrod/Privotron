@@ -1,0 +1,29 @@
+name: Instant Checkmate
+slug: instantcheckmate
+url: https://www.instantcheckmate.com/opt-out/
+required_fields:
+  - first_name
+  - last_name
+  - state
+  - city
+steps:
+  - action: navigate
+    url: "https://www.instantcheckmate.com/opt-out/"
+  - action: fill
+    selector: '[placeholder="First Name"]'
+    field: first_name
+  - action: fill
+    selector: '[placeholder="Last Name"]'
+    field: last_name
+  - action: fill
+    selector: '[placeholder="City"]'
+    field: city
+  - action: select_state
+    selector: '#state'
+    format: abbr
+  - action: click
+    selector: '[type="submit"]'
+  - action: wait
+    seconds: 5
+  - action: prompt_user_to_select_record
+    description: "Select your record to opt out from Instant Checkmate"

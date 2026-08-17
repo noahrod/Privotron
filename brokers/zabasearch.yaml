@@ -1,0 +1,21 @@
+name: ZabaSearch
+slug: zabasearch
+url: https://www.zabasearch.com/block_records/
+required_fields:
+  - first_name
+  - last_name
+  - email
+steps:
+  - action: navigate
+    url: "https://www.zabasearch.com/block_records/"
+  - action: fill_full_name
+    selector: '#name'
+  - action: fill
+    selector: '#email'
+    field: email
+  - action: click
+    selector: '[type="submit"]'
+  - action: wait
+    seconds: 3
+  - action: prompt_user_to_select_record
+    description: "Select your record to remove from ZabaSearch"

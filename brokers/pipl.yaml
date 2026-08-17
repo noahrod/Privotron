@@ -1,0 +1,25 @@
+name: Pipl
+slug: pipl
+url: https://pipl.com/personal-information-removal-request
+required_fields:
+  - first_name
+  - last_name
+  - email
+steps:
+  - action: navigate
+    url: "https://pipl.com/personal-information-removal-request"
+  - action: fill
+    selector: '[name="first_name"]'
+    field: first_name
+  - action: fill
+    selector: '[name="last_name"]'
+    field: last_name
+  - action: fill
+    selector: '[name="email"]'
+    field: email
+  - action: click
+    selector: '[type="submit"]'
+  - action: wait
+    seconds: 3
+  - action: prompt_user_to_select_record
+    description: "Confirm your removal request from Pipl"

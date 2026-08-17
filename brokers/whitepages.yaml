@@ -1,0 +1,25 @@
+name: Whitepages
+slug: whitepages
+url: https://www.whitepages.com/suppression_requests
+required_fields:
+  - first_name
+  - last_name
+  - state
+  - city
+steps:
+  - action: navigate
+    url: "https://www.whitepages.com/suppression_requests/new"
+  - action: fill_full_name
+    selector: '#full_name'
+  - action: fill
+    selector: '#city'
+    field: city
+  - action: select_state
+    selector: '#state'
+    format: abbr
+  - action: click
+    selector: '[type="submit"]'
+  - action: wait
+    seconds: 3
+  - action: prompt_user_to_select_record
+    description: "Select your record to remove from Whitepages"

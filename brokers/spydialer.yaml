@@ -1,0 +1,19 @@
+name: Spy Dialer
+slug: spydialer
+url: https://www.spydialer.com/optout.aspx
+required_fields:
+  - first_name
+  - last_name
+  - phone
+steps:
+  - action: navigate
+    url: "https://www.spydialer.com/optout.aspx"
+  - action: fill
+    selector: '[name="Phone"]'
+    field: phone
+  - action: click
+    selector: '[type="submit"]'
+  - action: wait
+    seconds: 3
+  - action: prompt_user_to_select_record
+    description: "Confirm opt-out from Spy Dialer"

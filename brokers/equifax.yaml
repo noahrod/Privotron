@@ -1,0 +1,25 @@
+name: Equifax
+slug: equifax
+url: https://www.equifax.com/personal/opt-out-prescreen-offers/
+required_fields:
+  - first_name
+  - last_name
+  - email
+steps:
+  - action: navigate
+    url: "https://www.optoutprescreen.com/"
+  - action: fill
+    selector: '[name="firstName"]'
+    field: first_name
+  - action: fill
+    selector: '[name="lastName"]'
+    field: last_name
+  - action: fill
+    selector: '[name="email"]'
+    field: email
+  - action: click
+    selector: '[type="submit"]'
+  - action: wait
+    seconds: 3
+  - action: prompt_user_to_select_record
+    description: "Follow the steps to opt out of prescreened offers via Equifax/OptOutPrescreen"
