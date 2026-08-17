@@ -1,0 +1,29 @@
+name: Radaris
+slug: radaris
+url: https://radaris.com/control/privacy
+required_fields:
+  - first_name
+  - last_name
+  - state
+  - city
+steps:
+  - action: navigate
+    url: "https://radaris.com/control/privacy"
+  - action: fill
+    selector: '[name="fname"]'
+    field: first_name
+  - action: fill
+    selector: '[name="lname"]'
+    field: last_name
+  - action: fill
+    selector: '[name="city"]'
+    field: city
+  - action: select_state
+    selector: '[name="state"]'
+    format: abbr
+  - action: click
+    selector: '[type="submit"]'
+  - action: wait
+    seconds: 5
+  - action: prompt_user_to_select_record
+    description: "Select your record to remove from Radaris"

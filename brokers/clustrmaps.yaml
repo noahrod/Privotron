@@ -1,0 +1,21 @@
+name: Clustrmaps
+slug: clustrmaps
+url: https://clustrmaps.com/persons/remove/
+required_fields:
+  - first_name
+  - last_name
+  - email
+steps:
+  - action: navigate
+    url: "https://clustrmaps.com/persons/remove/"
+  - action: fill_full_name
+    selector: '[name="name"]'
+  - action: fill
+    selector: '[name="email"]'
+    field: email
+  - action: click
+    selector: '[type="submit"]'
+  - action: wait
+    seconds: 3
+  - action: prompt_user_to_select_record
+    description: "Confirm removal request from Clustrmaps"

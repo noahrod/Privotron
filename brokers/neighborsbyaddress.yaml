@@ -1,0 +1,25 @@
+name: Neighbors by Address
+slug: neighborsbyaddress
+url: https://neighborsbyaddress.com/opt-out
+required_fields:
+  - first_name
+  - last_name
+  - email
+steps:
+  - action: navigate
+    url: "https://neighborsbyaddress.com/opt-out"
+  - action: fill
+    selector: '[name="firstName"]'
+    field: first_name
+  - action: fill
+    selector: '[name="lastName"]'
+    field: last_name
+  - action: fill
+    selector: '[name="email"]'
+    field: email
+  - action: click
+    selector: '[type="submit"]'
+  - action: wait
+    seconds: 3
+  - action: prompt_user_to_select_record
+    description: "Confirm your removal from NeighborsByAddress"

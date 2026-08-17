@@ -1,0 +1,25 @@
+name: ThatsThem
+slug: thatsthem
+url: https://thatsthem.com/optout
+required_fields:
+  - first_name
+  - last_name
+  - email
+steps:
+  - action: navigate
+    url: "https://thatsthem.com/optout"
+  - action: fill
+    selector: '[name="firstname"]'
+    field: first_name
+  - action: fill
+    selector: '[name="lastname"]'
+    field: last_name
+  - action: fill
+    selector: '[name="email"]'
+    field: email
+  - action: click
+    selector: '[type="submit"]'
+  - action: wait
+    seconds: 3
+  - action: prompt_user_to_select_record
+    description: "Select your record to remove from ThatsThem"

@@ -1,0 +1,25 @@
+name: BeenVerified
+slug: beenverified
+url: https://www.beenverified.com/app/optout/search
+required_fields:
+  - first_name
+  - last_name
+  - state
+steps:
+  - action: navigate
+    url: "https://www.beenverified.com/app/optout/search"
+  - action: fill
+    selector: '[name="firstName"]'
+    field: first_name
+  - action: fill
+    selector: '[name="lastName"]'
+    field: last_name
+  - action: select_state
+    selector: '[name="state"]'
+    format: abbr
+  - action: click
+    selector: '[type="submit"]'
+  - action: wait
+    seconds: 5
+  - action: prompt_user_to_select_record
+    description: "Select your record to opt out from BeenVerified"
